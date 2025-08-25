@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Interactive Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+
+    <h2>Letter Counter</h2>
+    <input type="text" id="textInput" placeholder="Type something here" />
+  
+    <button onclick="countLength()">Submit</button>
+    <p>Length of string: <span id="lengthOutput">0</span></p>
+
+    
+
+    <h2>Click Counter</h2>
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+    <p>Total Clicks: <span id="clickOutput">0</span></p>
+
+   
+
+    <h2>Swap Text</h2>
+    <input type="text" id="textOne" placeholder="Enter first text" />
+    
+    <input type="text" id="textTwo" placeholder="Enter second text" />
+   
+    <button onclick="swapText()">Swap</button>
+
+    
+    <h2>To-Do List</h2>
+    <input id="todoInput" type="text" placeholder="Add a task" />
+    <button onclick="addTask()">Add Task</button>
+    <ul id="todoList"></ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
