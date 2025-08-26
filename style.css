@@ -26,29 +26,19 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #000000;
-}
 
-hr {
-  margin: 20px 0;
-}
 
-#todoList {
-  margin-top: 10px;
-  text-align: left;
-  max-height: 150px;
-  overflow-y: auto;
-  padding-left: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fafafa;
-}
-
-#todoList li {
-  padding: 6px 10px;
-  border-bottom: 1px solid #ddd;
-  font-size: 14px;
+body {
+  background: rgb(144, 215, 233);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 
+
+#todoList li:last-child {
+  border-bottom: none;
+}

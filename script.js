@@ -31,20 +31,47 @@ function swapText() {
   second.value = temp;
 }
 
-// To-Do List
+// To-Do List 
+var tasks = [];
+
+function renderList() {
+  var ul = document.getElementById("todoList");
+  ul.innerHTML = "";
+  for(var i=0; i<tasks.length; i++) {
+    ul.innerHTML += '<li>' +
+      '<span id="task-'+i+'">' + tasks[i] + '</span> ' +
+      '<button onclick="editTask('+i+')">Edit</button>' +
+      '<button onclick="deleteTask('+i+')">Delete</button>' +
+      '</li>';
+  }
+}
+
 function addTask() {
   var input = document.getElementById("todoInput");
   var task = input.value.trim();
-
   if(task === "") {
     alert("Please enter a task.");
     return;
   }
-
-  var ul = document.getElementById("todoList");
-  var li = document.createElement("li");
-  li.textContent = task;
-  ul.appendChild(li);
-
+  tasks.push(task);
+  renderList();
   input.value = "";
+}
+
+function clearTasks() {
+  tasks = [];
+  renderList();
+}
+
+function deleteTask(idx) {
+  tasks.splice(idx, 1);
+  renderList();
+}
+
+function editTask(idx) {
+  var newTask = prompt("Edit your task:", tasks[idx]);
+  if(newTask !== null && newTask.trim() !== "") {
+    tasks[idx] = newTask.trim();
+    renderList();
+  }
 }
